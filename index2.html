@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="signup" onsubmit="return out()" onreset="resetout()">
+        <fieldset form="signup">
+            <legend>SIGN-UP: </legend><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" onblur="checkInput1()" onfocus="checkInput1()" placeholder="name"><br><br>
+
+            <label for="un">Username:</label>
+            <input type="text" id="un" name="un" onblur="checkInput2()" onfocus="checkInput2()" placeholder="username"><br><br>
+
+            <label for="pw">Password:</label>
+            <input type="password" id="pw" name="pw" onblur="checkInput3()" onfocus="checkInput3()" placeholder="password"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="em" name="email" onblur="checkInput4()" onfocus="checkInput4()" placeholder="email"><br><br><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="add" name="address" rows="2" cols="50" onblur="checkInput5()" onfocus="checkInput5()"> </textarea><br><br>
+
+            <label for="interests">What are your interests?</label><br>
+            <textarea id="int" name="interests" rows="5" cols="50" onblur="checkInput6()" onfocus="checkInput6()"> </textarea><br><br><br>
+
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gen" onblur="checkInput7()" onfocus="checkInput7()">
+                <option value="Select" selected disabled checked>Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Prefer not to Mention.">Prefer not to mention.</option>
+            </select><br><br><br>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </fieldset>
+        <br><hr><br>
+        <fieldset>
+            <legend>YOUR INFORMATION:</legend>
+            <p id="out"></p>
+        </fieldset>
+    </form>
+
+    <script>
+        function checkInput1(){
+          var inp=document.getElementById("name").value;
+          inp=inp.length;
+          
+          if(inp<=0){
+            document.getElementById("name").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("name").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput2(){
+          var inp=document.getElementById("un").value;
+          inp=inp.length;
+          
+          if(inp<=0){
+            document.getElementById("un").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("un").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput3(){
+          var inp=document.getElementById("pw").value;
+          inp=inp.length;
+          
+          if(inp<=0){
+            document.getElementById("pw").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("pw").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput4(){
+          var inp=document.getElementById("em").value;
+          inp=inp.length;
+          
+          if(inp<=0){
+            document.getElementById("em").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("em").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput5(){
+          var inp=document.getElementById("add").value;
+          inp=inp.length;
+          
+          if(inp<=1){
+            document.getElementById("add").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("add").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput6(){
+          var inp=document.getElementById("int").value;
+          inp=inp.length;
+          
+          if(inp<=1){
+            document.getElementById("int").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("int").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function checkInput7(){
+          var inp=document.getElementById("gen").value;
+          
+          if(inp=='Select'){
+            document.getElementById("gen").style.borderColor="rgb(255,0,0)";
+          }else{
+            document.getElementById("gen").style.borderColor="rgb(0,128,0)";
+          }
+        }
+
+        function out(){
+            var name=document.getElementById("name").value;
+            var un=document.getElementById("un").value;
+            var pw=document.getElementById("pw").value;
+            var em=document.getElementById("em").value;
+            var add=document.getElementById("add").value;
+            var int=document.getElementById("int").value;
+            var gen=document.getElementById("gen").value;
+
+            document.getElementById("out").innerHTML="Name: "+name+"<br> Username: "+un+"<br> Password: "+pw+"<br> Email: "+em+"<br> Address: "+add+"<br> Interests: "+int+"<br> Gender: "+gen;
+            
+            return false;
+        }
+
+        function resetout(){
+            var out = document.getElementById("out");
+            out.innerHTML = "";
+
+            var name=document.getElementById("name");
+            var un=document.getElementById("un");
+            var pw=document.getElementById("pw");
+            var em=document.getElementById("em");
+            var add=document.getElementById("add");
+            var int=document.getElementById("int");
+            var gen=document.getElementById("gen");
+
+            name.style.borderColor="black";
+            un.style.borderColor="black";
+            pw.style.borderColor="black";
+            em.style.borderColor="black";
+            add.style.borderColor="black";
+            int.style.borderColor="black";
+            gen.style.borderColor="black";
+        }
+    </script>
+</body>
+</html>

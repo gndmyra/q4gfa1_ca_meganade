@@ -1,0 +1,44 @@
+input{
+    border: 2px solid;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+textarea{
+    border: 2px solid;
+}
+
+select{
+  border: 2px solid;
+}
+
+form{
+  background-color: rgb(211,209,181);
+  margin: 2vh;
+  padding: 4vh;
+  border-radius: 3vh;
+  display: inline-block;
+  text-align: left;
+}
+
+body{
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input[type=submit]{
+  padding: 1vh;
+}
+
+input[type=reset]{
+  padding: 1vh;
+}
+
+legend{
+  font-weight: bold;
+  font-size: large;
+}
+
+fieldset{
+  border: 0px;
+}
